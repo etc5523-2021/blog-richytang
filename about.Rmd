@@ -1,7 +1,7 @@
 ---
 title: "About this blog"
 description: |
-  Some additional details about the blog
+  For this blog, I will show some informtion about the COVID-19 in Honduras
 ---
 
 ```{r setup, include=FALSE}

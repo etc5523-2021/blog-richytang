@@ -3,17 +3,17 @@
     {
       "path": "about.html",
       "title": "About this blog",
-      "description": "Some additional details about the blog",
+      "description": "For this blog, I will show some informtion about the COVID-19 in Honduras",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-08-31T09:20:53+08:00"
+      "last_modified": "2021-08-31T19:48:32+08:00"
     },
     {
       "path": "index.html",
       "title": "Blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-08-31T09:20:53+08:00"
+      "last_modified": "2021-08-31T19:48:32+08:00"
     }
   ],
   "collections": ["posts/posts.json"]
