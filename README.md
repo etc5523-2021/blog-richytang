@@ -1,7 +1,7 @@
 # My Blog
 
 
-This is the blog of [FILL].
+This is the blog of [Ruiqi Tang].
 The URL of this blog is [FILL].
 
 ## Blog Post 1
