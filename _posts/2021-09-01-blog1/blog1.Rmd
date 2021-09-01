@@ -1,0 +1,37 @@
+---
+title: "blog1"
+description: |
+  A short description of the post.
+author:
+  - name: Ruiqi Tang
+    url: https://example.com/norajones
+date: 08-01-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidycovid19)
+library(tidyverse)
+library(knitr)
+df <- download_merged_data(cached = TRUE, silent = TRUE)
+
+df %>%
+  filter(country == "Honduras") -> covid_hnd
+saveRDS(covid_hnd, "Honduras_covid.rds")
+covid_hnd %>%
+  select(date:recovered) -> df1
+```
+
+```{r}
+df1 %>%
+  select(-date) %>%
+  summary() %>%
+  kable()
+```
+
+This is the data summary for the Honduras data
+

@@ -1,8 +1,7 @@
 ---
 title: "Welcome to Blog"
 description: |
-  Welcome to our new blog, Blog. We hope you enjoy 
-  reading what we have to say!
+  I will show some infomation about covid-19 in Honduras, the data come from package `tidycovid19`. It contains the COVID data since Jan 2020. The source of data comes from mutiple website, such as the Johns Hopkins University CSSE Github Repo and the European Centre for Disease Prevention and Control. We can find more information from the [github](https://github.com/joachim-gassen/tidycovid19)
 author:
   - name: Ruiqi Tang 
     url: https://example.com/norajones
