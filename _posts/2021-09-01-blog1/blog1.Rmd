@@ -1,7 +1,7 @@
 ---
-title: "blog1"
+title: "Blog 1"
 description: |
-  A short description of the post.
+  We will show some tables and graphs, and we will find some interesting finding from those tables and graphs
 author:
   - name: Ruiqi Tang
     url: https://example.com/norajones

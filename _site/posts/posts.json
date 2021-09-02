@@ -18,8 +18,8 @@
   },
   {
     "path": "posts/2021-09-01-blog1/",
-    "title": "blog1",
-    "description": "A short description of the post.",
+    "title": "Blog 1",
+    "description": "We will show some tables and graphs, and we will find some interesting finding from those tables and graphs",
     "author": [
       {
         "name": "Ruiqi Tang",
@@ -30,7 +30,7 @@
     "categories": [],
     "contents": "\n\n\nconfirmed\ndeaths\nrecovered\n\nMin. : 0\nMin. : 0\nMin. : 0\n\n1st Qu.: 9978\n1st Qu.: 333\n1st Qu.: 418\n\nMedian :100804\nMedian :2780\nMedian : 34099\n\nMean :114697\nMean :3022\nMean : 36915\n\n3rd Qu.:191774\n3rd Qu.:4684\n3rd Qu.: 68425\n\nMax. :338757\nMax. :8850\nMax. :102384\n\nThis is the data summary for the Honduras data\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-09-02T00:25:57+08:00",
+    "last_modified": "2021-09-02T09:50:52+08:00",
     "input_file": {}
   }
 ]
