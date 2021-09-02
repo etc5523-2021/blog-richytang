@@ -7,3 +7,6 @@ description: |
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+my name is ruiqi tang, and I am study the business analysist. This is my first blog. I want to share some information about the Covid-19 in Honduras
+
+<img src="flag.jpeg">

@@ -11,8 +11,6 @@ output:
     self_contained: false
 ---
 
-The coffee of Honduras is famous all over the world, and they are the one of the largest countries of coffee bee output. I am the big fan of Honduras coffee bee, so this is the reason why I choose Honduras. The __Covid-19__ has large impact on the their coffee industry.
-
 I want to show some __Covid-19__ information, and we can look wheter the __Covid-19__ is still very serious in Honduras. Then, we also will find some interest information
 
 ```{r setup, include=FALSE}
@@ -24,17 +22,45 @@ df <- download_merged_data(cached = TRUE, silent = TRUE)
 
 df %>%
   filter(country == "Honduras") -> covid_hnd
-saveRDS(covid_hnd, "Honduras_covid.rds")
 covid_hnd %>%
   select(date:recovered) -> df1
+
+df1 %>%
+  mutate(new_cases = confirmed - lag(confirmed)) %>%
+  filter(!is.na(new_cases)) -> df1
 ```
 
 ```{r}
 df1 %>%
   select(-date) %>%
-  summary() %>%
-  kable()
+  summarise(
+    confirmed = max(confirmed),
+    deaths = max(deaths),
+    recivered = max(recovered),
+    average_new_cases = mean(new_cases)
+  ) -> table
+kable(table, caption = "the summary of the Covid-19 in Honduras")
 ```
 
-This is the data summary for the Honduras data
+This is the data summary for the Honduras data. From the table, we can see the total confirmed, total deaths, total recovered and the average increase of the new cases. We know the population of the Honduras is $9904607$ from the [Wikipedia](https://en.wikipedia.org/wiki/Demographics_of_Honduras). The number of total confirmed case is `r (338757 / 9904607)*100`% of the total population. The number of the total deaths is `r (8850 / 9904607)*100`% of the total population. Now, more than $2.27523*10^{5} $  people are strugle with the Covid-19. Then, now the number of case increase $577$ every day on average
 
+
+
+```{r}
+DT::datatable(df1, caption = "The all historical data")
+```
+This is historical table, it is a interactive table, we can play with it, and see all historicial data since 2020 Jan.
+
+```{r}
+df1 %>%
+  ggplot() +
+  geom_line(aes(x = date, y = confirmed, colour = "confirmed")) +
+  geom_line(aes(x = date, y = deaths, colour = "deaths")) -> p1
+plotly::ggplotly(p1)
+```
+
+This is time series plot. it shows that the the number of confirmed case increase very quick. Compared with confirmed case, the number of deaths shows a slowing increase. Finally, this is a interactive graph, we can play with it.
+
+__Conclusion__
+
+I have shown some table and graph, it looks like that the the confirmed case may continue to increase. it may has a long impact in Honduras.  

@@ -28,3 +28,6 @@ knitr::opts_chunk$set(echo = FALSE)
 <img src="covid-19-welcome.jpeg">
 
 
+The coffee of Honduras is famous all over the world, and they are the one of the largest countries of coffee bee output. I am the big fan of Honduras coffee bee, so this is the reason why I choose Honduras. The __Covid-19__ has large impact on the their coffee industry.
+
+<img src="coffee.jpeg">

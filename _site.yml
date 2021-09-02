@@ -1,14 +1,14 @@
 name: "blog-richytang"
-title: "Blog"
+title: "ETC5523 Blog"
 description: |
-  Blog
+  ETC5523 Blog
 output_dir: "_site"
 navbar:
   right:
     - text: "Home"
       href: index.html
-    - text: "About"
-      href: about.html        
     - text: "WTO"
       href: https://www.who.int
+    - text: "About"
+      href: about.html        
 output: distill::distill_article
