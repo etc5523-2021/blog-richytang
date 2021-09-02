@@ -11,6 +11,9 @@ output:
     self_contained: false
 ---
 
+The coffee of Honduras is famous all over the world, and they are the one of the largest countries of coffee bee output. I am the big fan of Honduras coffee bee, so this is the reason why I choose Honduras. The __Covid-19__ has large impact on the their coffee industry.
+
+I want to show some __Covid-19__ information, and we can look wheter the __Covid-19__ is still very serious in Honduras. Then, we also will find some interest information
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
