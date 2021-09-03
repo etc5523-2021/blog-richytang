@@ -111,7 +111,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Welcome to Blog"]},{"type":"character","attributes":{},"value":["Package information and data discription\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Ruiqi Tang"]},{"type":"character","attributes":{},"value":["https://example.com/norajones"]},{"type":"character","attributes":{},"value":["Spacely Sprockets"]},{"type":"character","attributes":{},"value":["https://example.com/spacelysprokets"]}]}]},{"type":"character","attributes":{},"value":["08-31-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Welcome to Blog"]},{"type":"character","attributes":{},"value":["Package information and data discription\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Ruiqi Tang"]}]}]},{"type":"character","attributes":{},"value":["08-31-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1455,7 +1455,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Welcome to Blog","description":"Package information and data discription","authors":[{"author":"Ruiqi Tang","authorURL":"https://example.com/norajones","affiliation":"Spacely Sprockets","affiliationURL":"https://example.com/spacelysprokets","orcidID":""}],"publishedDate":"2021-08-31T00:00:00.000+00:00","citationText":"Tang, 2021"}
+{"title":"Welcome to Blog","description":"Package information and data discription","authors":[{"author":"Ruiqi Tang","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-31T00:00:00.000+00:00","citationText":"Tang, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1472,18 +1472,51 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-byline">
-  Ruiqi Tang <a href="https://example.com/norajones" class="uri">https://example.com/norajones</a> (Spacely Sprockets)<a href="https://example.com/spacelysprokets" class="uri">https://example.com/spacelysprokets</a>
+  Ruiqi Tang  
   
 <br/>08-31-2021
 </div>
 
 <div class="d-article">
+<div class="layout-chunk" data-layout="l-body">
+<style type="text/css">
+.title, .subtitle {
+  text-transform: uppercase;
+  font-family: copperplate;
+}
+.author {
+  font-family: "Times New Roman", Times, serif;
+}
+.date {
+  font-family: papyrus;
+}
+body {
+  background-color: white;
+  color: black;
+  font-size: 20px;
+}
+strong {
+  color: grey;
+}
+.border {
+  border: 5px solid yellow;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+</style>
+</div>
 <p>I will show some infomation about covid-19 in Honduras, the data come from package <code>tidycovid19</code>. It contains the COVID data since Jan 2020. The source of data comes from mutiple website, such as the Johns Hopkins University CSSE Github Repo and the European Centre for Disease Prevention and Control. We can find more information from the <a href="https://github.com/joachim-gassen/tidycovid19">github</a>. In addition to, I put the websit of World Health Organization. There are more infromation about</p>
 <p><br />
 </p>
 <p><img src="covid-19-welcome.jpeg"></p>
 <p>The coffee of Honduras is famous all over the world, and they are the one of the largest countries of coffee bee output. I am the big fan of Honduras coffee bee, so this is the reason why I choose Honduras. The <strong>Covid-19</strong> has large impact on the their coffee industry.</p>
 <p><img src="coffee.jpeg"></p>
+<p><strong>Reference</strong></p>
+<p>tidycovid19, Joachim Gassen, URL: <a href="https://github.com/joachim-gassen/tidycovid19">https://github.com/joachim-gassen/tidycovid19</a></p>
+<p>Photo: Virus of Covid-19</p>
+<p>Photo: Coffee of Honduras</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

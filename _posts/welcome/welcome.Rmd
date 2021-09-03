@@ -4,14 +4,39 @@ description: |
   Package information and data discription
 author:
   - name: Ruiqi Tang 
-    url: https://example.com/norajones
-    affiliation: Spacely Sprockets
-    affiliation_url: https://example.com/spacelysprokets
 date: 08-31-2021
 output:
   distill::distill_article:
     self_contained: false
 ---
+
+```{css, echo = FALSE}
+.title, .subtitle {
+  text-transform: uppercase;
+  font-family: copperplate;
+}
+.author {
+  font-family: "Times New Roman", Times, serif;
+}
+.date {
+  font-family: papyrus;
+}
+body {
+  background-color: white;
+  color: black;
+  font-size: 20px;
+}
+strong {
+  color: grey;
+}
+.border {
+  border: 5px solid yellow;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+```
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
@@ -31,3 +56,12 @@ knitr::opts_chunk$set(echo = FALSE)
 The coffee of Honduras is famous all over the world, and they are the one of the largest countries of coffee bee output. I am the big fan of Honduras coffee bee, so this is the reason why I choose Honduras. The __Covid-19__ has large impact on the their coffee industry.
 
 <img src="coffee.jpeg">
+
+
+__Reference__
+
+tidycovid19, Joachim Gassen, URL: [https://github.com/joachim-gassen/tidycovid19](https://github.com/joachim-gassen/tidycovid19)
+
+Photo: Virus of Covid-19
+
+Photo: Coffee of Honduras

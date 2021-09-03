@@ -2,7 +2,7 @@
 
 
 This is the blog of [Ruiqi Tang].
-The URL of this blog is [FILL].
+The URL of this blog is [https://etc5523-blog-richy.netlify.app](https://etc5523-blog-richy.netlify.app).
 
 ## Blog Post 1
 

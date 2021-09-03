@@ -3,3 +3,31 @@ title: "ETC5523 Blog"
 site: distill::distill_website
 listing: posts
 ---
+
+```{css, echo = FALSE}
+.title, .subtitle {
+  text-transform: uppercase;
+  font-family: copperplate;
+}
+.author {
+  font-family: "Times New Roman", Times, serif;
+}
+.date {
+  font-family: papyrus;
+}
+body {
+  background-color: white;
+  color: black;
+  font-size: 20px;
+}
+strong {
+  color: grey;
+}
+.border {
+  border: 5px solid yellow;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+```
