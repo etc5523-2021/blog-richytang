@@ -1,7 +1,7 @@
 ---
-title: "blog2"
+title: "Belgium"
 description: |
-  A short description of the post.
+  The covid-19 in Belgium
 author:
   - name: Ruiqi Tang
     url: {}
@@ -11,7 +11,206 @@ output:
     self_contained: false
 ---
 
+```{css, echo = FALSE}
+.title, .subtitle {
+  text-transform: uppercase;
+  font-family: copperplate;
+}
+.author {
+  font-family: "Times New Roman", Times, serif;
+}
+.date {
+  font-family: papyrus;
+}
+body {
+  background-color: white;
+  color: black;
+  font-size: 20px;
+}
+strong {
+  color: grey;
+}
+.border {
+  border: 5px solid yellow;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
 
-this is my second blog
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidycovid19)
+library(tidyverse)
+library(zoo)
+library(knitr)
+
+#df <- download_merged_data(cached = TRUE, silent = TRUE)
+belgium <- readRDS("~/Desktop/shiba/ETC5523/my blog/_posts/welcome/belgium.rds")
+#df %>%
+ # filter(country == "Belgium") -> covid_beg
+belgium  -> covid_beg
+covid_beg %>%
+  select(date:deaths, total_tests:positive_rate, total_vaccinations, population) -> df1
+
+```
+
+We use the data come from [tidycovid19](https://github.com/joachim-gassen/tidycovid19)
+
+|variable name    |Meaning                                                       |
+|:----------------|:-------------------------------------------------------------|
+|date             |Calendar date                                                 |
+|confirmed        |Confirmed Covid-19 cases as reported by JHU CSSE (accumulated)|
+|deaths           |Covid-19-related deaths as reported by JHU CSSE (accumulated) |
+|recovered        |Covid-19 recoveries as reported by JHU CSSE (accumulated)     |
+|population       |Country population as reported by the World Bank              |
+|total_vaccinations|Vaccinations case as reported by Our World in Data’ team     |
+|apple_mtr_driving|Apple Maps usage for driving directions, as percentage*100 relative to the baseline of Jan 13, 2020|
+|apple_mtr_walking|Apple Maps usage for walking directions, as percentage*100 relative to the baseline of Jan 13, 2020|
+|apple_mtr_transit|Apple Maps usage for public transit directions, as percentage*100 relative to the baseline of Jan 13, 2020|
+
+
+This is the interactive table, it shows the historical data 
+
+
+```{r}
+df1 %>%
+  mutate(
+    new_cases = confirmed - lag(confirmed),
+    ave_new_cases = rollmean(new_cases, 7, na.pad=TRUE, align="right"),
+  ) -> df2
+df2 %>%
+  select(date:total_tests, positive_rate, total_vaccinations, new_cases) %>%
+  DT::datatable()
+```
+
+```{r}
+df2 %>%
+  select(-date, -tests_units, -population, -ave_new_cases) %>%
+  summary() %>%
+  kable(caption = "summary of Covid-19 in Belgium")
+```
+
+This is the table of data summary. Some values are interesting. Average daily new case are 2017. The Maximum daily value is 23921, which means that the max number of new case is 23921.
+
+
+The plot of the total confirmed case
+
+```{r}
+df2 %>%
+  drop_na(new_cases) %>%
+  ggplot() +
+  geom_bar(aes(x = date, y = confirmed) ,stat = "identity", fill = "lightblue") +
+  labs(title = "Plot of confirmed case")+
+  theme_bw() -> p1
+plotly::ggplotly(p1)
+```
+
+From graph, we can see that the epidemic happens at around 2020 Mar. It has a significant increase between 2020 Oct to 2020 Dec. Then, it has increase stably after 2021 Jan. We can do anther graph to determine the daily new case.
+
+```{r}
+df2 %>%
+  filter(!is.na(new_cases), !is.na(ave_new_cases)) %>%
+  ggplot(aes(x = date)) +
+  geom_bar(aes(y = new_cases), stat = "identity", fill = "lightgray") +
+  labs(title = "The plot of daily new case") +
+  theme_bw() -> p2
+plotly::ggplotly(p2)
+```
+
+From the graph, we can see that it has a peak at 2020 Oct, and there is other peak at 2020 Mar.
+
+__vaccinations__
+
+I want to determine whether the vaccinations reduce the situation of epidemic.
+
+In order to determine the trend between the vaccinations and the total confirmed, I put the different scale for the on the `total_vaccinations` and `confirmed`
+
+
+```{r}
+ggplot() +
+  geom_line(aes(x= date, y = total_vaccinations/10000000, color ="vaccinations") ,data = filter(df2, !is.na(total_vaccinations))) +
+  geom_line(aes(x=date, y = confirmed/1000000, color = "confirmed"), data = df2) +
+  labs(x = "date",
+       y = "confirmed(1000000)/vaccinations(10000000)",
+       title = "The trend for the total confirmed cases and vaccinations") -> p3
+plotly::ggplotly(p3)
+```
+
+From the graph above, we can conclude that the number of new case increase very quick after 2020 Sep. Then, the slope became stable after 2020 Oct. However, the vaccinations program was launch after 2020 Dec, and the daily case does not show any decrease trend after the vaccinations program. Then, there is anther peak at 2021 May. Therefore, the vaccinations program may not have effect on the covid-19
+
+__Activity__
+
+We may consider other factor. The contraction between people or social distance may influence the epidemic
+
+```{r}
+ggplot() +
+  geom_line(aes(x= date, y = apple_mtr_driving, color ="driving") ,
+            data = filter(covid_beg, !is.na(apple_mtr_driving))) +
+  geom_line(aes(x=date, y = confirmed/10000, color = "confirmed"), 
+            data = df1) +
+  labs(y = "Driving direction/total confirm case(10000)",
+       x = "Date",
+       title = "Driving direction") +
+  theme_bw() -> p4
+plotly::ggplotly(p4)
+```
+
+The graph shows Apple Maps usage for driving directions. We can find that large number of people drive outside at around 2020 Aug. Then, it has large daily new cases in the following days (around 2020 Oct). This is reasonable, because the covid-19 virus spreaded by the air. If more people get togather, the people will have more probability to infect the covid-19 virus. Then, the infected people usually are test as the positive after a few days. 
+
+During the 2020 Sep to 2020 Dec, there are less people driving out, the number of daily new case increase slowly after 2020 Nov. since the less people, the spreading become slow.
+
+```{r}
+ggplot() +
+  geom_line(aes(x= date, y = apple_mtr_walking, color ="walking") ,data = filter(covid_beg, !is.na(apple_mtr_walking))) +
+  geom_line(aes(x=date, y = confirmed/10000, color = "confirmed"), data = df1) +
+  labs(y = "walking direction/total confirm case(10000)",
+       x = "Date",
+       title = "walking direction") +
+  theme_bw() -> p4
+plotly::ggplotly(p4)
+```
+
+The graph show the same information as the above. There is a peak during 2020 May. Then, the daily new case increase significantly.
+
+```{r}
+ggplot() +
+  geom_line(aes(x= date, y = apple_mtr_transit, color ="transit") ,data = filter(covid_beg, !is.na(apple_mtr_transit))) +
+  geom_line(aes(x=date, y = confirmed/10000, color = "confirmed"), data = df1) +
+  labs(y = "transit direction/total confirm case(10000)",
+       x = "Date",
+       title = "transit direction") +
+  theme_bw() -> p5
+plotly::ggplotly(p5)
+```
+
+overall, the number of people who take the pubulic transipation is small than the number of people who walk outside or diving.
+
+From the three graphs above, the number of new case will have a significant increase after the one peak of the outside activity, which is the . Then, the covid-19 spread by the air and contact between people and people. Therefore, I reasonably guess that the outside activity is one of the most factor that impact the covid-19 spread.
+
+
+```{r}
+ggplot() +
+  geom_bar(aes(x= date, y = lockdown), stat = "identity", fill = "gray", data = filter(covid_beg, !is.na(soc_dist))) + 
+  geom_line(aes(x=date, y = confirmed/100000), data = df1) +
+  labs(y = "lockdown/total confirm case(100000)",
+       x = "Date",
+       title = "Lockdown") +
+  theme_bw() -> p6
+plotly::ggplotly(p6)
+```
+It is not far from our guess, when the lock down increase, the daily new will decrease. when the lock down decrease, the total confirmed cases will increase very quick, for example, the confirmed cases incrase very quick from 2020 Jun to 2020 Nov. However, it does not have large effect after 2020 Dec. 
+
+__Conclusion__
+
+I just determine the two question. Firstly, I talk about How the vaccinations program influence the covid-19 spreading. Then, I use data to show the outside activity and lockdown influence the covid-19 spreading
+
+
+__Reference__
+
+Jonchia Gassen, tidycovid19, URL: [https://github.com/joachim-gassen/tidycovid19](https://github.com/joachim-gassen/tidycovid19)
+
+
 
 

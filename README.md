@@ -5,11 +5,15 @@ This is the blog of [Ruiqi Tang].
 
 The URL of this blog is [https://etc5523-blog-richy.netlify.app](https://etc5523-blog-richy.netlify.app).
 
+The URL of this blog2 is [https://etc5523-blog2-richy.netlify.app](https://etc5523-blog2-richy.netlify.app).
+
 ## Blog Post 1
 
 This assessment is due Fri Sep 3 2021 11.55PM AEST.
 
-My selected country is [Honduras].
+My selected country is [Honduras] for the __Blog1__.
+
+My selected country is [Belgian] for the __Blog2__.
 
 The relevant blog post for this assessment is in [FILL].html
 

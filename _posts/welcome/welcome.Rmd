@@ -46,7 +46,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
-  I will show some infomation about covid-19 in Honduras, the data come from package `tidycovid19`. It contains the COVID data since Jan 2020. The source of data comes from mutiple website, such as the Johns Hopkins University CSSE Github Repo and the European Centre for Disease Prevention and Control. We can find more information from the [github](https://github.com/joachim-gassen/tidycovid19). In addition to, I put the websit of World Health Organization. There are more infromation about 
+I will show some infomation about covid-19 in Honduras, the data come from package `tidycovid19`. It contains the COVID data since Jan 2020. The source of data comes from mutiple website, such as the Johns Hopkins University CSSE Github Repo and the European Centre for Disease Prevention and Control. We can find more information from the [github](https://github.com/joachim-gassen/tidycovid19). In addition to, I put the websit of World Health Organization. There are more infromation about 
 
 \
 
@@ -57,6 +57,10 @@ The coffee of Honduras is famous all over the world, and they are the one of the
 
 <img src="coffee.jpeg">
 
+For the Blog 2, I will talk some thing about covid-19 in Belgium.
+Belgium is a beautiful country in in Western Europe. The government do very good job on against the coronavirus. They put some restriction to against coronavirus. I will use some table and graph to show how the restriction inflence the covid-19
+
+
 
 __Reference__
 
@@ -65,3 +69,5 @@ tidycovid19, Joachim Gassen, URL: [https://github.com/joachim-gassen/tidycovid19
 Photo: Virus of Covid-19
 
 Photo: Coffee of Honduras
+
+Photo: the street view in belgium, from google picture

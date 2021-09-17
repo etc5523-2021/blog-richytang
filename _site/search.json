@@ -5,15 +5,15 @@
       "title": "About this blog",
       "description": "For this blog, I will show some informtion about the COVID-19 in Honduras and we may find some interesting things",
       "author": [],
-      "contents": "\n\n\n.title, .subtitle {\n  text-transform: uppercase;\n  font-family: copperplate;\n}\n.author {\n  font-family: \"Times New Roman\", Times, serif;\n}\n.date {\n  font-family: papyrus;\n}\nbody {\n  background-color: white;\n  color: black;\n  font-size: 20px;\n}\nstrong {\n  color: grey;\n}\n.border {\n  border: 5px solid yellow;\n  padding: 5px;\n  border-radius: 5px;\n  background-color: white;\n}\n\n\nMy name is Ruiqi Tang majored in the Business Analytics. I am studying the creating of Blog. This is my first blog. I want to share some information about the Covid-19 in Honduras\n\n\nReference\nPhoto: Flag of Honduras\nPhoto: the sea of Honduras\n\n\n\n",
-      "last_modified": "2021-09-14T18:10:58+08:00"
+      "contents": "\n\n\n.title, .subtitle {\n  text-transform: uppercase;\n  font-family: copperplate;\n}\n.author {\n  font-family: \"Times New Roman\", Times, serif;\n}\n.date {\n  font-family: papyrus;\n}\nbody {\n  background-color: white;\n  color: black;\n  font-size: 20px;\n}\nstrong {\n  color: grey;\n}\n.border {\n  border: 5px solid yellow;\n  padding: 5px;\n  border-radius: 5px;\n  background-color: white;\n}\n\n\nMy name is Ruiqi Tang majored in the Business Analytics. I am studying the creating of Blog. This is my first blog. I want to share some information about the Covid-19 in Honduras\n\n\nFor the Blog2 I will talk about the covid-19 in Belgium\n\nReference\nPhoto: Flag of Honduras\nPhoto: the sea of Honduras\n\n\n\n",
+      "last_modified": "2021-09-17T21:41:48+08:00"
     },
     {
       "path": "index.html",
       "title": "ETC5523 Blog",
       "author": [],
       "contents": "\n\n\n.title, .subtitle {\n  text-transform: uppercase;\n  font-family: copperplate;\n}\n.author {\n  font-family: \"Times New Roman\", Times, serif;\n}\n.date {\n  font-family: papyrus;\n}\nbody {\n  background-color: white;\n  color: black;\n  font-size: 20px;\n}\nstrong {\n  color: grey;\n}\n.border {\n  border: 5px solid yellow;\n  padding: 5px;\n  border-radius: 5px;\n  background-color: white;\n}\n\n\n\n\n\n",
-      "last_modified": "2021-09-14T18:10:59+08:00"
+      "last_modified": "2021-09-17T21:41:48+08:00"
     }
   ],
   "collections": ["posts/posts.json"]
